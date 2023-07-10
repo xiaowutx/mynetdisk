@@ -1,0 +1,23 @@
+server:
+  port: 8086
+
+
+#user:
+#  username: "张三"
+#  password: "123456"
+
+spring:
+#  数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/massivedatabase?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+
+
+hadoop:
+    namenode:
+      rpc:
+        url: hdfs://192.168.78.130
