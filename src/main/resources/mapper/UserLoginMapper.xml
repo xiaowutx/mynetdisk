@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.netdisk.mapper.UserLoginMapper">
+    <select id="getUserByUsernameAndPassword" resultType="com.example.netdisk.bean.User"
+            parameterType="com.example.netdisk.bean.User">
+        SELECT * FROM t_user WHERE  username=#{username} AND password = #{password}
+
+    </select>
+
+    <select id="getAllUser" resultType="com.example.netdisk.bean.User">
+        select * from  t_user ;
+    </select>
+
+    <insert id="insertUser" parameterType="com.example.netdisk.bean.User">
+       insert into t_user (username,password,email)values (#{username},#{password},
+                                                           #{email})
+    </insert>
+
+
+</mapper>
